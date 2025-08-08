@@ -23,7 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@po-ui/style/css/po-theme-default.min.css",
+              "node_modules/@totvs/po-theme/css/po-theme-default-variables.min.css",
+              "node_modules/@totvs/po-theme/css/po-theme-default.min.css",
+              "node_modules/@po-ui/style/css/po-theme-core.min.css"
             ],
             "scripts": []
           },
@@ -32,8 +35,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1500kb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -64,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "my-po-project:build:production"
+              "buildTarget": "my-po-project:build:production"
             },
             "development": {
-              "browserTarget": "my-po-project:build:development"
+              "buildTarget": "my-po-project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my-po-project:build"
+            "buildTarget": "my-po-project:build"
           }
         },
         "test": {
@@ -90,12 +93,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@po-ui/style/css/po-theme-default.min.css",
+              "node_modules/@totvs/po-theme/css/po-theme-default-variables.min.css",
+              "node_modules/@totvs/po-theme/css/po-theme-default.min.css",
+              "node_modules/@po-ui/style/css/po-theme-core.min.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "ffbe7dd6-3607-43ca-b706-0b004bc3aa59"
   }
 }

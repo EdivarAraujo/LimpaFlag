@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PoModule } from '@po-ui/ng-components';
+import { RouterModule } from '@angular/router';
+import { ProtheusLibCoreModule } from '@totvs/protheus-lib-core';
+import { PoTemplatesModule } from '@po-ui/ng-templates';
 
 @NgModule({
   declarations: [
@@ -10,7 +13,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PoModule,
+    RouterModule.forRoot([]),
+    ProtheusLibCoreModule,
+    PoTemplatesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
