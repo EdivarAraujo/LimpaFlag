@@ -1,0 +1,6 @@
+{
+  "name": "Limpar Flag CTB",
+  "version": "1.0.0",
+  "api_base_url": "http://localhost:8084/rest",
+  "productLine": "Protheus"
+}

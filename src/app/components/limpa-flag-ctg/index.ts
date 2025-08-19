@@ -1,0 +1,1 @@
+export * from './limpa-flag-ctg.component'; 

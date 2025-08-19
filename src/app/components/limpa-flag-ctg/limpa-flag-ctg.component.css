@@ -1,0 +1,82 @@
+/* Estilos para o componente Limpa Flag CTG */
+
+.po-row {
+  margin-bottom: 16px;
+}
+
+.po-mt-2 {
+  margin-top: 16px;
+}
+
+.po-mt-3 {
+  margin-top: 24px;
+}
+
+.po-mt-4 {
+  margin-top: 32px;
+}
+
+.po-mb-2 {
+  margin-bottom: 16px;
+}
+
+/* Estilização dos filtros */
+.po-input, .po-datepicker, .po-number {
+  margin-bottom: 8px;
+}
+
+/* Botões de ação */
+.po-button {
+  margin-right: 12px;
+  margin-bottom: 8px;
+}
+
+/* Tabela de resultados */
+po-table {
+  margin-top: 16px;
+}
+
+/* Informações */
+po-info {
+  margin-top: 16px;
+}
+
+/* Títulos das seções */
+h3 {
+  color: #2c9aa6;
+  font-weight: 600;
+  border-bottom: 2px solid #e1e8ed;
+  padding-bottom: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .po-md-3, .po-sm-6, .po-xs-12 {
+    margin-bottom: 16px;
+  }
+  
+  .po-button {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* Estilo para campos obrigatórios */
+.required-field {
+  border-left: 3px solid #c64840;
+}
+
+/* Estilo para campos com valores */
+.field-with-value {
+  background-color: #f8f9fa;
+}
+
+/* Estilo para botão de limpeza em lote */
+.batch-clean-button {
+  background-color: #c64840;
+  color: white;
+}
+
+.batch-clean-button:hover {
+  background-color: #a63932;
+} 

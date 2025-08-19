@@ -1,0 +1,170 @@
+<po-page-default class="po-container" p-title="LIMPA FLAG CTG - Busca e Limpeza de Títulos Contabilizados">
+
+  <!-- Seção de Filtros -->
+  <h3 class="po-mt-2 po-mb-2">Filtros de Busca</h3>
+
+  <div class="po-row">
+    <!-- Primeira linha de filtros -->
+    <div class="po-md-3 po-sm-6 po-xs-12">
+      <po-input
+        name="filial"
+        p-label="Filial"
+        p-placeholder="Ex: 010101"
+        [(ngModel)]="filtros.E1_FILIAL">
+      </po-input>
+    </div>
+
+    <div class="po-md-3 po-sm-6 po-xs-12">
+      <po-input
+        name="prefixo"
+        p-label="Prefixo"
+        p-placeholder="Ex: NF"
+        [(ngModel)]="filtros.E1_PREFIXO">
+      </po-input>
+    </div>
+
+    <div class="po-md-3 po-sm-6 po-xs-12">
+      <po-input
+        name="numero"
+        p-label="Número"
+        p-placeholder="Ex: 000001"
+        [(ngModel)]="filtros.E1_NUM">
+      </po-input>
+    </div>
+
+    <div class="po-md-3 po-sm-6 po-xs-12">
+      <po-input
+        name="parcela"
+        p-label="Parcela"
+        p-placeholder="Ex: 001"
+        [(ngModel)]="filtros.E1_PARCELA">
+      </po-input>
+    </div>
+  </div>
+
+  <div class="po-row">
+    <div class="po-md-3 po-sm-6 po-xs-12">
+      <po-input
+        name="tipo"
+        p-label="Tipo"
+        p-placeholder="Ex: R"
+        [(ngModel)]="filtros.E1_TIPO">
+      </po-input>
+    </div>
+
+    <div class="po-md-3 po-sm-6 po-xs-12">
+      <po-input
+        name="natureza"
+        p-label="Natureza"
+        p-placeholder="Ex: VENDAS"
+        [(ngModel)]="filtros.E1_NATUREZ">
+      </po-input>
+    </div>
+
+    <div class="po-md-3 po-sm-6 po-xs-12">
+      <po-input
+        name="cliente"
+        p-label="Cliente"
+        p-placeholder="Ex: CLIENTE001"
+        [(ngModel)]="filtros.E1_CLIENTE">
+      </po-input>
+    </div>
+
+    <div class="po-md-3 po-sm-6 po-xs-12">
+      <po-input
+        name="loja"
+        p-label="Loja"
+        p-placeholder="Ex: 01"
+        [(ngModel)]="filtros.E1_LOJA">
+      </po-input>
+    </div>
+  </div>
+
+  <div class="po-row">
+    <div class="po-md-3 po-sm-6 po-xs-12">
+      <po-input
+        name="Valor"
+        p-label="Valor"
+        p-placeholder="Ex: 2.500,00"
+        [(ngModel)]="filtros.E1_VALOR">
+      </po-input>
+    </div>
+    <div class="po-md-3 po-sm-6 po-xs-12">
+      <po-datepicker
+        name="dataEmissao"
+        p-label="Data Emissao"
+        p-placeholder="Data Emissao"
+        [(ngModel)]="filtros.E1_EMISSAO">
+      </po-datepicker>
+    </div>
+
+    <div class="po-md-3 po-sm-6 po-xs-12">
+      <po-datepicker
+        name="vencimentoReal"
+        p-label="Vencimento Real"
+        p-placeholder="Vencimento Real"
+        [(ngModel)]="filtros.E1_VENCREA">
+      </po-datepicker>
+    </div>
+
+  </div>
+
+  <!-- Botões de ação -->
+  <div class="po-row po-mt-2">
+    <div class="po-md-12">
+      <po-button
+        p-label="Buscar Títulos"
+        p-icon="po-icon-search"
+        (p-click)="buscarTitulos()">
+      </po-button>
+
+      <po-button
+        p-label="Limpar Filtros"
+        p-icon="po-icon-refresh"
+        p-kind="secondary"
+        (p-click)="limparFiltros()"
+        class="po-ml-3">
+      </po-button>
+    </div>
+  </div>
+
+  <!-- Seção de Resultados -->
+  <h3 class="po-mt-4 po-mb-2">Títulos Encontrados</h3>
+
+
+  <div class="po-row po-mt-2">
+    <div class="po-md-12">
+      <po-table
+        [p-columns]="columns"
+        [p-items]="titulos"
+        [p-actions]="tableActions"
+        [p-selectable]="true"
+        (p-selected)="onSelectionChange($event)">
+      </po-table>
+    </div>
+  </div>
+
+  <!-- Botão para limpar flags selecionadas -->
+  <div class="po-row po-mt-2" *ngIf="titulosSelecionados.length > 0">
+    <div class="po-md-12">
+      <po-button
+        p-label="Limpar Flags Selecionados ({{titulosSelecionados.length}})"
+        p-icon="po-icon-delete"
+        p-kind="danger"
+        (p-click)="limparFlagsSelecionados()">
+      </po-button>
+    </div>
+  </div>
+
+
+  <!-- Informações adicionais -->
+  <div class="po-row po-mt-3">
+    <div class="po-md-12">
+      <po-info
+        p-label="Informações"
+        [p-value]="'Total de títulos encontrados: ' + titulos.length + ' | Títulos selecionados: ' + titulosSelecionados.length">
+      </po-info>
+    </div>
+  </div>
+
+</po-page-default>

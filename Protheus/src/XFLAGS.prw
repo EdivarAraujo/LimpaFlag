@@ -1,7 +1,8 @@
 #include "protheus.ch"
 
-User Function testepoui()
+User Function XFLAGS()
 
   FwCallApp("my-po-project")
+
 
 Return

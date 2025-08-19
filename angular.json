@@ -63,14 +63,14 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve": {
+       "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-po-project:build:production"
+              "browserTarget": "my-po-project:build:production"
             },
             "development": {
-              "buildTarget": "my-po-project:build:development"
+              "browserTarget": "my-po-project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "my-po-project:build"
+            "browserTarget": "my-po-project:build"
           }
         },
         "test": {
