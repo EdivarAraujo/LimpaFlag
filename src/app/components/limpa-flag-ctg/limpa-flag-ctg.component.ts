@@ -86,15 +86,7 @@ export class LimpaFlagCtgComponent implements OnInit {
     ).subscribe({
       next: (data) => {
         console.log('Dados recebidos:', data);
-        if (Array.isArray(data.items)) {
-          this.titulos = data.items;
-          } else if (data.items) {
-          this.titulos = [data.items];
-          } else if (data.retorno) {
-          this.titulos = [data.retorno];
-          } else {
-          this.titulos = [];
-          }
+        this.titulos = Array.isArray(data.items) ? data.items : [];
         this.poNotification.success('Busca realizada com sucesso!');
       },
       error: () => {
